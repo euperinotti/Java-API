@@ -1,16 +1,33 @@
-package br.com.model;
+package br.com.api.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
 public class User {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "idusuario")
   private Integer idusuario;
+
+  @Column(name = "nome", length = 200, nullable = true)
   private String nome;
+
+  @Column(name = "sobrenome", length = 200, nullable = true)
   private String sobrenome;
+
+  @Column(name = "email", length = 200, nullable = true)
   private String email;
+
+  @Column(name = "senha", length = 200, nullable = true)
   private String senha;
+
+  @Column(name = "telefone", length = 200, nullable = true)
   private String telefone;
 
 
